@@ -5,12 +5,17 @@ var users = [
     {"name" : "Jane", "gender" : "Female", "img" : "img/jane_doe.png"}
 ];
 
-var currentUserIndex = 0;
+var currentUserIndex = 1;
 
 function toggleCard(){
-    currentUserIndex =(currentUserIndex + 1) % 2;
-    var user = users[currentUserIndex];
+    currentUserIndex =1 - currentUserIndex;
+    var nextUser = users[currentUserIndex];
+    displayUser(nextUser);
+}
 
+function displayUser(user)
+{
+   
     // DOM Manipulation
     document.getElementById("userImage").src = user.img;
     document.getElementById("userGender").innerHTML = user.gender;
